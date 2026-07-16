@@ -1,0 +1,19 @@
+{
+  "name": "mc-sound-downloader",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Sound Downloader for Minecraft — browse, play and bulk-download every sound from any game version. Fully static, no backend.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "client-zip": "^2.4.5"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3",
+    "vite": "^7.0.0"
+  }
+}

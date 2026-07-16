@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse, play and download every sound from any Minecraft version — releases, snapshots and old alpha/beta." />
+    <title>Sound Downloader for Minecraft</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔊</text></svg>" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="brand">
+          <h1>Sound Downloader <span class="for-mc">for Minecraft</span></h1>
+          <p>Every sound from every version — browse, play, download</p>
+        </div>
+        <div class="version-controls">
+          <select id="version-type" title="Version type">
+            <option value="release" selected>Releases</option>
+            <option value="snapshot">Snapshots</option>
+            <option value="old">Old (alpha/beta)</option>
+            <option value="all">All types</option>
+          </select>
+          <input id="version-search" type="search" placeholder="Filter versions…" autocomplete="off" />
+          <select id="version-select" title="Game version"></select>
+        </div>
+      </header>
+
+      <div id="error-banner" class="error-banner" hidden></div>
+
+      <section class="toolbar">
+        <input id="sound-search" type="search" placeholder="Search sounds (e.g. zombie, note, portal)…" autocomplete="off" />
+        <select id="category-select" title="Category"></select>
+        <span id="stats" class="stats">Loading versions…</span>
+        <button id="download-all" class="primary" disabled>Download all</button>
+      </section>
+
+      <section id="progress-panel" class="progress-panel" hidden>
+        <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+        <div class="progress-row">
+          <span id="progress-text"></span>
+          <button id="progress-cancel">Cancel</button>
+        </div>
+        <details id="progress-report" hidden>
+          <summary></summary>
+          <pre></pre>
+        </details>
+      </section>
+
+      <main id="sound-list" class="sound-list" aria-label="Sound files"></main>
+
+      <footer class="footer">
+        <p>
+          Sound lists come straight from Mojang's official version API. File downloads use the
+          CORS-enabled <a href="https://github.com/InventivetalentDev/minecraft-assets" target="_blank" rel="noopener">minecraft-assets</a>
+          mirror and are SHA-1 verified against Mojang's asset index. Playback streams from Mojang's official
+          servers. Safari cannot play OGG previews; downloads still work.
+        </p>
+        <p>
+          <strong>Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</strong>
+          All sounds remain © Mojang / Microsoft; this site hosts no game files.
+        </p>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
